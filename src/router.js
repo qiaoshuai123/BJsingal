@@ -3,6 +3,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Redirect,
 } from 'react-router-dom'
 import loadable from 'loadable-components'
 
@@ -17,6 +18,7 @@ const Parent = () => (
     <Route path="*" component={Header} />
     <Route exact path="/home" component={HomePage} />
     <Route exact path="/plancontrolpage" component={PlancontrolPage} />
+    <Redirect exact from="/" to="/home" />
   </React.Fragment>
 )
 export default function BasicRouter() {

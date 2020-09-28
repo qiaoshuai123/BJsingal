@@ -2,13 +2,13 @@ import React, { Component } from 'react'
 import { Menu } from 'antd'
 import styles from './PlancontrolPage.module.scss'
 import mapConfiger from '../utils/minemapConf'
-import { AppstoreOutlined } from '@ant-design/icons'
 const { SubMenu } = Menu;
 class Homepage extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      mainHomePage: false
+      mainHomePage: false,
+      Istitletops: true,
     }
   }
   componentDidMount = () => {
@@ -25,6 +25,11 @@ class Homepage extends Component {
         .setLngLat([116.391, 39.911])
         .addTo(this.map);
     }
+  }
+  gettitletops = (isShow) => {
+    this.setState({
+      Istitletops: isShow,
+    })
   }
   renderMap = () => {
     mapConfiger.zoom = 11
@@ -47,17 +52,17 @@ class Homepage extends Component {
     console.log('click ', e);
   }
   render() {
-    const { mainHomePage } = this.state
+    const { mainHomePage, Istitletops } = this.state
     return (
       <div className={styles.PlancontrolPageWrapper}>
         <div className={styles.sidebarLeft}>
           <div className={styles.titletops}>
-            <span>活动</span>
-            <span>应急</span>
+            <span onClick={() => this.gettitletops(true)} className={Istitletops ? styles.titletopsActive : ''}>活动</span>
+            <span onClick={() => this.gettitletops(false)} className={!Istitletops ? styles.titletopsActive : ''}>应急</span>
           </div>
           <Menu
             onClick={this.handleClick}
-            style={{ width: 256, color: '#86b7fa', height: '100%', overflowY: 'auto' }}
+            style={{ width: 256, color: '#86b7fa', height: '100%', overflowY: 'auto', fontSize: '16px' }}
             // defaultSelectedKeys={['7']}
             // defaultOpenKeys={['sub2', 'sub3']}
             mode="inline"
@@ -71,7 +76,7 @@ class Homepage extends Component {
                 <Menu.Item key="9">知春路与罗庄西路</Menu.Item>
                 <Menu.Item key="10">知春路与海淀黄庄路</Menu.Item>
               </SubMenu>
-              <Menu.Item key="6">万泉庄路</Menu.Item>
+              <SubMenu key="sub3-2" title="万泉庄路"></SubMenu>
             </SubMenu>
             <SubMenu
               key="sub4"
