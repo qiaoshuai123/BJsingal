@@ -1,0 +1,131 @@
+.PlancontrolPageWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #021027;
+    .container {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: calc(100% - 70px);
+        .contentCenter {
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            .title {
+                height: 20px;
+                text-align: center;
+                line-height: 19px;
+                background: url(../imgs/titbg.png) center 5px no-repeat;
+                background-size: 100% 100%;
+            }
+            .mapabcgl-ctrl-top-right {
+                display: none;
+            }
+            .centerMain {
+                flex: 1;
+                .centerBox {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    .ceterLeft,
+                    .centerRight {
+                        width: 200px;
+                        height: 100%;
+                        padding-top: 10px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        overflow-y: auto;
+                        .areaDetails {
+                            width: 160px;
+                            margin-bottom: 20px;
+                            .areaName {
+                                margin-bottom: 6px;
+                                font-size: 22px;
+                                color: #ffa200;
+                            }
+                            .details {
+                                height: 42px;
+                                padding-left: 7px;
+                                background: url(../imgs/singalmsg.png) center center no-repeat;
+                                background-size: 100% 100%;
+                                font-size: 13px;
+                                .msg {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    .online,
+                                    .outline {
+                                        min-width: 70px;
+                                        height: 20px;
+                                        display: flex;
+                                        align-items: center;
+                                        .nomalVal {
+                                            color: #2afafe;
+                                        }
+                                        .outlineVal {
+                                            color: #818181;
+                                        }
+                                        .faultVal {
+                                            color: #ff0001;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .center {
+                        flex: 1;
+                        background-color: #031334;
+                        position: relative;
+                        .topInfo {
+                            position: absolute;
+                            top: 10px;
+                            left: 0;
+                            width: 100%;
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: space-between;
+                            .info {
+                                width: 220px;
+                                height: 75px;
+                                background: url(../imgs/numbg.png) center center no-repeat;
+                                background-size: 100% 100%;
+                                display: flex;
+                                .infoName {
+                                    display: flex;
+                                    justify-content: center;
+                                    flex-direction: column;
+                                    padding-left: 10px;
+                                    font-size: 16px;
+                                    color: #0ff2fd;
+                                    .infoText {
+                                        padding-bottom: 5px;
+                                    }
+                                }
+                                .infoValue {
+                                    flex: 1;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    padding-right: 10px;
+                                    .infoNum {
+                                        width: 32px;
+                                        height: 50px;
+                                        background: url(../imgs/22.png) center center no-repeat;
+                                        background-size: 100% 100%;
+                                        font: 50px num;
+                                        text-indent: 3px;
+                                        line-height: 50px;
+                                        color: #fef500;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

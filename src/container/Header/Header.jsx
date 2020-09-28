@@ -6,6 +6,9 @@ class Header extends Component {
         super(props)
         this.state = {}
     }
+    handleClick = (router) => {
+        this.props.history.push(router)
+    }
     render() {
         return (
             <div className="headerWrapper">
@@ -14,7 +17,7 @@ class Header extends Component {
                     <div className="navItem">
                         <div className="nav">实时监视</div>
                         <div className="nav">中心控制</div>
-                        <div className="nav">预案控制</div>
+                        <div className="nav" onClick={() => this.handleClick('/plancontrolpage')}>预案控制</div>
                         <div className="nav">信号优化</div>
                     </div>
                     <div className="navItem itemRight">
