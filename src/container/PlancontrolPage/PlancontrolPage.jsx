@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
 import { Menu } from 'antd'
-import { AppstoreOutlined } from '@ant-design/icons'
-
-const { SubMenu } = Menu;
 import styles from './PlancontrolPage.module.scss'
 import mapConfiger from '../utils/minemapConf'
-
+import { AppstoreOutlined } from '@ant-design/icons'
+const { SubMenu } = Menu;
 class Homepage extends Component {
   constructor(props) {
     super(props)
@@ -45,29 +43,56 @@ class Homepage extends Component {
     })
     this.map = map
   }
+  handleClick = e => {
+    console.log('click ', e);
+  }
   render() {
     const { mainHomePage } = this.state
     return (
       <div className={styles.PlancontrolPageWrapper}>
         <div className={styles.sidebarLeft}>
-          <div>
+          <div className={styles.titletops}>
             <span>活动</span>
             <span>应急</span>
           </div>
           <Menu
             onClick={this.handleClick}
-            style={{ width: 256 }}
-            defaultSelectedKeys={['1']}
-            defaultOpenKeys={['sub1']}
+            style={{ width: 256, color: '#86b7fa', height: '100%', overflowY: 'auto' }}
+            // defaultSelectedKeys={['7']}
+            // defaultOpenKeys={['sub2', 'sub3']}
             mode="inline"
+
           >
-            <SubMenu key="sub2" icon={<AppstoreOutlined />} title="Navigation Two">
-              <Menu.Item key="5">Option 5</Menu.Item>
-              <Menu.Item key="6">Option 6</Menu.Item>
-              <SubMenu key="sub3" title="Submenu">
-                <Menu.Item key="7">Option 7</Menu.Item>
-                <Menu.Item key="8">Option 8</Menu.Item>
+            <SubMenu key="sub2" title="海淀区">
+              {/* <Menu.Item key="5"></Menu.Item> */}
+              <SubMenu key="sub3" title="知春路拥堵应急">
+                <Menu.Item key="7">知春路与罗庄东路</Menu.Item>
+                <Menu.Item key="8">知春路与罗庄中路</Menu.Item>
+                <Menu.Item key="9">知春路与罗庄西路</Menu.Item>
+                <Menu.Item key="10">知春路与海淀黄庄路</Menu.Item>
               </SubMenu>
+              <Menu.Item key="6">万泉庄路</Menu.Item>
+            </SubMenu>
+            <SubMenu
+              key="sub4"
+              title="房山区"
+            >
+              {/* <Menu.Item key="1-2-9">Option 9</Menu.Item> */}
+            </SubMenu>
+            <SubMenu
+              key="sub5"
+              title="通州区"
+            >
+            </SubMenu>
+            <SubMenu
+              key="sub6"
+              title="门头沟区"
+            >
+            </SubMenu>
+            <SubMenu
+              key="sub7"
+              title="中关村东路"
+            >
             </SubMenu>
           </Menu>
         </div>
